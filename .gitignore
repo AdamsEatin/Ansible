@@ -1,0 +1,2 @@
+#Exclude content of sources directory
+/sources/*

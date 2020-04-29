@@ -1,0 +1,22 @@
+# This is the default ansible 'hosts' file.
+#
+# It should live in /etc/ansible/hosts
+#
+#   - Comments begin with the '#' character
+#   - Blank lines are ignored
+#   - Groups of hosts are delimited by [header] elements
+#   - You can enter hostnames or ip addresses
+#   - A hostname/ip can be a member of multiple groups
+
+[master_host]
+192.162.0.80
+
+[docker_all]
+192.168.0.[81:86]
+
+[docker_managers]
+
+[docker_workers]
+
+[test_hosts]
+192.162.0.[90:96]
