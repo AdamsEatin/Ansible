@@ -7,16 +7,34 @@
 #   - Groups of hosts are delimited by [header] elements
 #   - You can enter hostnames or ip addresses
 #   - A hostname/ip can be a member of multiple groups
-
-[master_host]
-192.162.0.80
-
-[docker_all]
-192.168.0.[81:86]
-
-[docker_managers]
-
-[docker_workers]
-
-[test_hosts]
-192.162.0.[90:96]
+all:
+  hosts:
+    centosmaster880:
+      ansible_host: 192.168.0.80
+  children:
+    docker_hosts:
+      hosts:
+        centosdocker881:
+          ansible_host: 192.168.0.81
+        centosdocker882:
+          ansible_host: 192.168.0.82
+        centosdocker883:
+          ansible_host: 192.168.0.83
+        centosdocker884:
+          ansible_host: 192.168.0.84
+    test_hosts:
+      hosts:
+        testhost0:
+          ansible_host: 192.168.0.90
+        testhost1:
+          ansible_host: 192.168.0.91
+        testhost2:
+          ansible_host: 192.168.0.92
+        testhost3:
+          ansible_host: 192.168.0.93
+        testhost4:
+          ansible_host: 192.168.0.94
+        testhost5:
+          ansible_host: 192.168.0.95
+        testhost6:
+          ansible_host: 192.168.0.96
