@@ -18,7 +18,7 @@
   tasks:
     - name: Ensure CheckMK Agent RPM is present
       copy:
-        src: /opt/ansible/sources/CheckMK/agents/check-mk-agent-1.6.0p11-1.noarch.rpm
+        src: /etc/ansible/sources/CheckMK/agents/check-mk-agent-1.6.0p11-1.noarch.rpm
         dest: /tmp/check-mk-agent-1.6.0p11-1.noarch.rpm
         owner: root
         group: root
