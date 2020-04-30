@@ -1,0 +1,32 @@
+# Ansible playbook to Update & Install Yum packages
+# -Updates Yum Packages
+# -Installs specified packages
+#
+# Syntax: 
+#    ansible-playbook -i <path to inventory> -l <host group / hostname> <path to playbook>/ main.yaml
+# Example: 
+#    ansible-playbook -i /etc/ansible/hosts -l centosdocker884 /etc/ansible/playbooks/Initial_Config/main.yaml
+#
+
+
+- hosts: all
+  remote_user: root
+  become: yes
+  become_method: sudo
+
+  tasks:
+    - name: update packages
+      yum:
+       name: '*'
+       state: latest
+
+    - name: install packages
+      yum:
+        name: "{{ packages }}"
+      vars:
+        packages:
+        - epel-release
+        - telnet
+        - net-tools
+        - bind-utils
+

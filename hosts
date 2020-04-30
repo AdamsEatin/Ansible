@@ -16,25 +16,17 @@ all:
       hosts:
         centosdocker881:
           ansible_host: 192.168.0.81
+          ansible_user: vagrant
+          ansible_ssh_private_key: /opt/vagrant/hosts/centosdocker881/.vagrant/machines/default/virtualbox/private_key
         centosdocker882:
           ansible_host: 192.168.0.82
+          ansible_user: vagrant
+          ansible_ssh_private_key: /opt/vagrant/hosts/centosdocker882/.vagrant/machines/default/virtualbox/private_key
         centosdocker883:
           ansible_host: 192.168.0.83
+          ansible_user: vagrant
+          ansible_ssh_private_key: /opt/vagrant/hosts/centosdocker883/.vagrant/machines/default/virtualbox/private_key
         centosdocker884:
           ansible_host: 192.168.0.84
-    test_hosts:
-      hosts:
-        testhost0:
-          ansible_host: 192.168.0.90
-        testhost1:
-          ansible_host: 192.168.0.91
-        testhost2:
-          ansible_host: 192.168.0.92
-        testhost3:
-          ansible_host: 192.168.0.93
-        testhost4:
-          ansible_host: 192.168.0.94
-        testhost5:
-          ansible_host: 192.168.0.95
-        testhost6:
-          ansible_host: 192.168.0.96
+          ansible_user: vagrant
+          ansible_ssh_private_key_file: /opt/vagrant/hosts/centosdocker884/.vagrant/machines/default/virtualbox/private_key
