@@ -5,9 +5,9 @@
 # -Activates changes
 #
 # Syntax:
-#    ansible-playbook -i <path to inventory> -l <host group / hostname> <path to playbook>/ main.yaml
+#    ansible-playbook -i <path to inventory> -l <host group / hostname> <path to playbook>
 # Example:
-#    ansible-playbook -i /etc/ansible/hosts -l centosdocker884 /etc/ansible/playbooks/Install_CheckMK_Agent/main.yaml
+#    ansible-playbook -i /etc/ansible/hosts -l centosdocker884 /etc/ansible/playbooks/Install_CheckMK_Agent.yaml
 #
 
 - hosts: all
