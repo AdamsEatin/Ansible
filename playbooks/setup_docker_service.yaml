@@ -1,0 +1,45 @@
+# Ansible playbook to Install and enable the Docker package
+# 
+# Syntax:
+#    ansible-playbook -i <path to inventory> <path to playbook>
+#
+
+- hosts: all
+  remote_user: root
+  become: yes
+  become_method: sudo
+
+  tasks:
+    - name: Update Yum Packages
+      yum:
+        name: '*'
+      state: latest
+
+    - name: Ensure Docker dependencies are installed
+      yum:
+        name:
+          - yum-utils
+          - device-mapper-persistent-data
+          - lvm2
+        state: installed
+
+    - name: Add Docker Repo
+      get_url:
+        url: https://download.docker.com/linux/centos/docker-ce.repo
+        dest: /etc/yum.repos.d/docker-ce.repo
+
+    - name: Ensure Docker package is installed
+      yum:
+        name:
+          - docker
+        state: latest
+
+    - name: Ensure Docker is running
+      systemd:
+        state: started
+        name: docker
+
+    - name: Enable Docker in Systemd
+      systemd:
+        name: docker
+        enabled: yes

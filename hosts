@@ -9,24 +9,18 @@
 #   - A hostname/ip can be a member of multiple groups
 all:
   hosts:
-    centosmaster880:
+    centosserver180:
       ansible_host: 192.168.0.80
   children:
-    docker_hosts:
+    prometheus:
       hosts:
-        centosdocker881:
+        prometheus181:
           ansible_host: 192.168.0.81
           ansible_user: vagrant
-          ansible_ssh_private_key: /opt/vagrant/hosts/centosdocker881/.vagrant/machines/default/virtualbox/private_key
-        centosdocker882:
+          ansible_ssh_private_key: /opt/vagrant/hosts/prometheus181/.vagrant/machines/default/virtualbox/private_key
+    docker:
+      hosts:  
+        docker182:
           ansible_host: 192.168.0.82
           ansible_user: vagrant
-          ansible_ssh_private_key: /opt/vagrant/hosts/centosdocker882/.vagrant/machines/default/virtualbox/private_key
-        centosdocker883:
-          ansible_host: 192.168.0.83
-          ansible_user: vagrant
-          ansible_ssh_private_key: /opt/vagrant/hosts/centosdocker883/.vagrant/machines/default/virtualbox/private_key
-        centosdocker884:
-          ansible_host: 192.168.0.84
-          ansible_user: vagrant
-          ansible_ssh_private_key_file: /opt/vagrant/hosts/centosdocker884/.vagrant/machines/default/virtualbox/private_key
+          ansible_ssh_private_key: /opt/vagrant/hosts/docker182/.vagrant/machines/default/virtualbox/private_key

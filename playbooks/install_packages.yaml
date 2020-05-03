@@ -4,8 +4,6 @@
 #
 # Syntax: 
 #    ansible-playbook -i <path to inventory> -l <host group / hostname> <path to playbook>
-# Example: 
-#    ansible-playbook -i /etc/ansible/hosts -l centosdocker884 /etc/ansible/playbooks/Setup_Packages.yaml
 #
 
 
